@@ -93,7 +93,7 @@ function HomePage() {
 
        <section>
          <div>
-           <h3 className="text-5xl py-1 dark:text-white">Portfolio</h3>
+           <h3 className="text-5xl py-10 dark:text-white">Portfolio</h3>
            {/* <p className="text-lg font-medium py-2 leading-8 text-gray-800 dark:text-white">Here is my portfolio..........</p> */}
          </div>
 
