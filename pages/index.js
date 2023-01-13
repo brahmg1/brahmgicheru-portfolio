@@ -15,6 +15,7 @@ import web3 from "../public/coding-quiz.png";
 import web4 from "../public/workday-scheduler.png";
 import web5 from "../public/password-generator.png";
 import { useState } from "react";
+import Typewriter from "typewriter-effect";
 
 
 function HomePage() {
@@ -39,16 +40,31 @@ function HomePage() {
             <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className="cursor-pointer text-xl dark:fill-white"/>
           </li>
           <li>
-            <a className="bg-gradient-to-r from-cyan-500 to-teal-500 text-black px-4 py-2 rounded-md ml-8 dark:text-white" href="https://drive.google.com/file/d/18HPh9s5Yf5A5bcCHFFk9TsoBZNRKoGHH/view?usp=sharing">Resume</a>
+            <a className="bg-gradient-to-r from-red-400 to-orange-400 text-black px-4 py-2 rounded-md ml-8 animate-pulse dark:text-white" href="https://drive.google.com/file/d/18HPh9s5Yf5A5bcCHFFk9TsoBZNRKoGHH/view?usp=sharing">Resume</a>
           </li>
         </ul>
           </nav>
 
           <div className="text-center p-10">
-            <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl" >Brahm Gicheru</h2>
-            <h3 className="text-2xl py-2 md:text-3xl dark:text-white">Software Engineer</h3>
-            <p className="text-md text-justify py-5 leading-8 text-gray-800 md:text-xl max-w-lg mx-auto dark:text-white">
-            Hello, my name is Brahm and I am a government contractor with 9+ years of experience looking to transition into software engineering. I have completed projects using technologies such as <span className="text-teal-500">JavaScript, React, Node, Express, HTML, CSS, JSON, MySQL, MongoDB, and APIs </span> in school and in my personal time, and I am always looking for ways to expand my knowledge and expertise. I am eager to take on new challenges and make a meaningful contribution to the field as a professional software engineer.
+            <h2 className="text-5xl py-2 text-orange-400 font-medium md:text-6xl" >
+            <Typewriter
+            onInit={(typewriter) => {
+              typewriter.typeString("Brahm Gicheru").start();
+            }}
+          />
+            </h2>
+            <h3 className="text-2xl py-2 md:text-3xl dark:text-white">
+            <Typewriter
+            onInit={(typewriter) => {
+              typewriter.typeString("Software Engineer").start();
+            }}
+            options={{
+              loop: true,
+            }}
+          />
+            </h3>
+            <p className="text-md text-justify py-5 leading-8 text-gray-800 md:text-xl max-w-4xl mx-auto dark:text-white tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:float-left">
+            Hello, my name is Brahm and I am a government contractor with 9+ years of experience looking to transition into software engineering. I have completed projects using technologies such as <span className="text-orange-400 font-semibold">JavaScript, React, Node, Express, HTML, CSS, JSON, MySQL, MongoDB, and APIs </span> in school and in my personal time, and I am always looking for ways to expand my knowledge and expertise. I am eager to take on new challenges and make a meaningful contribution to the field as a professional software engineer.
             </p>
           </div>
 
