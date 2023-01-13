@@ -63,7 +63,7 @@ function HomePage() {
             }}
           />
             </h3>
-            <p className="text-md text-justify py-5 leading-8 text-gray-800 md:text-xl max-w-4xl mx-auto dark:text-white tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:float-left">
+            <p className="text-md text-justify py-5 leading-8 text-gray-800 md:text-xl max-w-4xl mx-auto dark:text-white first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:float-left">
             Hello, my name is Brahm and I am a government contractor with 9+ years of experience looking to transition into software engineering. I have completed projects using technologies such as <span className="text-orange-400 font-semibold">JavaScript, React, Node, Express, HTML, CSS, JSON, MySQL, MongoDB, and APIs </span> in school and in my personal time, and I am always looking for ways to expand my knowledge and expertise. I am eager to take on new challenges and make a meaningful contribution to the field as a professional software engineer.
             </p>
           </div>
