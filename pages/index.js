@@ -14,6 +14,7 @@ import web2 from "../public/budget-tracker.png";
 import web3 from "../public/coding-quiz.png";
 import web4 from "../public/workday-scheduler.png";
 import web5 from "../public/password-generator.png";
+import web7 from "../public/web7.png";
 import { useState } from "react";
 import Typewriter from "typewriter-effect";
 
@@ -34,10 +35,21 @@ function HomePage() {
 
        <section className="min-h-screen">
          <nav className="py-10 mb-12 flex justify-between">
-        <h1 className="text-xl font-burtons dark:text-white">Brahm Gicheru</h1>
+        <h1  className="text-xl font-burtons dark:text-white">
+          <a href="#home">Brahm Gicheru</a>
+          </h1>
         <ul className="flex items-center">
-          <li>
+          <li className="px-10">
             <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className="cursor-pointer text-xl dark:fill-white"/>
+          </li>
+          <li>
+            <a href="#home" className="px-4 dark:text-orange-400 text-orange-400">Home</a>
+          </li>
+          <li>
+            <a href="#about" className="px-4 dark:text-white hover:text-orange-400">About</a>
+          </li>
+          <li>
+            <a href="#portfolio" className="px-4 dark:text-white hover:text-orange-400">Portfolio</a>
           </li>
           <li>
             <a className="bg-gradient-to-r from-red-400 to-orange-400 text-black px-4 py-2 rounded-md ml-8 animate-pulse dark:text-white" href="https://drive.google.com/file/d/18HPh9s5Yf5A5bcCHFFk9TsoBZNRKoGHH/view?usp=sharing">Resume</a>
@@ -113,36 +125,44 @@ function HomePage() {
            {/* <p className="text-lg font-medium py-2 leading-8 text-gray-800 dark:text-white">Here is my portfolio..........</p> */}
          </div>
 
+
          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-           <div className="basis-1/3 flex-1">
+         <div className="basis-1/4 flex-1">
+           <a href="https://brahmg1.github.io/codebreakers/" target="_blank">
+           <Image src={web7} className="rounded-lg object-cover" width={'100%'} height={'100%'} layout="responsive" />
+                    </a>
+                    <h3  className="text-lg font-medium pt-8 pb-2 dark:text-white">CityGirl Brewery Locator</h3>
+           </div>
+           
+           <div className="basis-1/4 flex-1">
            <a href="https://brahmg1.github.io/weather-dashboard/Develop/index.html" target="_blank">
            <Image src={web1} className="rounded-lg object-cover" width={'100%'} height={'100%'} layout="responsive" />
                     </a>
                     <h3  className="text-lg font-medium pt-8 pb-2 dark:text-white">Weather Dashboard</h3>
            </div>
 
-           <div className="basis-1/3 flex-1">
+           <div className="basis-1/4 flex-1">
            <a href="https://infinite-reef-10985.herokuapp.com/" target="_blank">
            <Image src={web2} className="rounded-lg object-cover" width={'100%'} height={'100%'} layout="responsive" />
                     </a>
                     <h3  className="text-lg font-medium pt-8 pb-2 dark:text-white">Budget Tracker</h3>
            </div>
 
-           <div className="basis-1/3 flex-1">
+           <div className="basis-1/4 flex-1">
            <a href="https://brahmg1.github.io/code-quiz/Develop/index.html" target="_blank">
            <Image src={web3} className="rounded-lg object-cover" width={'100%'} height={'100%'} layout="responsive" />
                     </a>
                     <h3  className="text-lg font-medium pt-8 pb-2 dark:text-white">Coding Quiz</h3>
            </div>
 
-           <div className="basis-1/3 flex-1">
+           <div className="basis-1/4 flex-1">
            <a href="https://brahmg1.github.io/super-disco/Develop/index.html" target="_blank">
            <Image src={web4} className="rounded-lg object-cover" width={'100%'} height={'100%'} layout="responsive" />
                     </a>
                     <h3  className="text-lg font-medium pt-8 pb-2 dark:text-white">Work Day Scheduler</h3>
            </div>
 
-           <div className="basis-1/3 flex-1">
+           <div className="basis-1/4 flex-1">
            <a href="https://brahmg1.github.io/password-generator/Develop/index.html" target="_blank">
            <Image src={web5} className="rounded-lg object-cover" width={'100%'} height={'100%'} layout="responsive" />
                     </a>
