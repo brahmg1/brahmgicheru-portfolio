@@ -15,12 +15,20 @@ import web3 from "../public/coding-quiz.png";
 import web4 from "../public/workday-scheduler.png";
 import web5 from "../public/password-generator.png";
 import web7 from "../public/web7.png";
+import web8 from "../public/To-Do-List-Application.png";
 import { useState } from "react";
 import Typewriter from "typewriter-effect";
 
-
 function HomePage() {
   const [darkMode, setDarkMode] = useState(false);
+
+  const projects = [
+    { image: web1, title: "Weather Dashboard", url: "https://brahmg1.github.io/weather-dashboard/Develop/index.html" },
+    { image: web2, title: "Budget Tracker", url: "https://budget-tracker-roan.vercel.app" },
+    { image: web8, title: "To Do List Application", url: "https://to-do-list-brahmg1.vercel.app" },
+    { image: web7, title: "CityGirl Brewery Locator", url: "https://brahmg1.github.io/codebreakers/" },  
+  ];
+
   return (
     <div className={darkMode ? "dark" : ""}>
 
@@ -36,13 +44,30 @@ function HomePage() {
        <section className="min-h-screen">
          <nav className="py-10 mb-12 flex justify-between">
         <h1  className="text-xl font-burtons dark:text-white">
-          <a href="#home">Brahm Gicheru</a>
+          Brahm Gicheru
           </h1>
         <ul className="flex items-center">
           <li className="px-10">
             <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className="cursor-pointer text-xl dark:fill-white"/>
           </li>
-          <li>
+
+          <li className="flex items-center ml-4">
+  <div className="text-5xl flex justify-center gap-4 py-3 dark:text-white">
+    <a href="https://www.linkedin.com/in/brahm-gicheru-5b75144b/" className="ml-2">
+      <AiFillLinkedin />
+    </a>
+  </div>
+</li>
+
+<li className="flex items-center">
+  <div className="text-5xl flex justify-center gap-4 py-3 dark:text-white">
+    <a href="https://github.com/brahmg1" className="ml-2">
+      <AiFillGithub />
+    </a>
+  </div>
+</li>
+
+          {/* <li>
             <a href="#home" className="px-4 dark:text-orange-400 text-orange-400">Home</a>
           </li>
           <li>
@@ -50,7 +75,7 @@ function HomePage() {
           </li>
           <li>
             <a href="#portfolio" className="px-4 dark:text-white hover:text-orange-400">Portfolio</a>
-          </li>
+          </li> */}
           <li>
             <a className="bg-gradient-to-r from-red-400 to-orange-400 text-black px-4 py-2 rounded-md ml-8 animate-pulse dark:text-white" href="https://drive.google.com/file/d/18HPh9s5Yf5A5bcCHFFk9TsoBZNRKoGHH/view?usp=sharing">Resume</a>
           </li>
@@ -70,25 +95,21 @@ function HomePage() {
             onInit={(typewriter) => {
               typewriter.typeString("Software Engineer").start();
             }}
-            options={{
-              loop: true,
-            }}
+            // options={{
+            //   loop: true,
+            // }}
           />
-            </h3>
-            <p className="text-md text-justify py-5 leading-8 text-gray-800 md:text-xl max-w-4xl mx-auto dark:text-white first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:float-left">
-            Hello, my name is Brahm and I am a government contractor with 9+ years of experience looking to transition into software engineering. I have completed projects using technologies such as <span className="text-orange-400 font-semibold">JavaScript, React, Node, Express, HTML, CSS, JSON, MySQL, MongoDB, and APIs </span> in school and in my personal time, and I am always looking for ways to expand my knowledge and expertise. I am eager to take on new challenges and make a meaningful contribution to the field as a professional software engineer.
-            </p>
-          </div>
 
-          <div className="text-5xl flex justify-center gap-16 py-3 dark:text-white">
-            <a href="https://www.linkedin.com/in/brahm-gicheru-5b75144b/">
-            <AiFillLinkedin />
-            </a>
-            {/* <AiFillGithub /> */}
-          </div>
-          <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
+            <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
             <Image src={linkedin} layout="fill" objectFit="cover"/>
           </div>
+
+            </h3>
+            <p className="text-md text-justify py-5 leading-8 text-gray-800 md:text-xl max-w-4xl mx-auto dark:text-white first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:float-left">
+            Hello, my name is Brahm and I am an experienced Government contractor trusted on multi-million dollar contracts in project management. Enthusiastic life-long learner with a passion for bringing software engineering ideas to life and learning new technologies. Highly effective in self management while working on solo projects and collaborating on team projects. <span className="text-orange-400 font-semibold"> Technical Skills: JavaScript, React, Node, Express, HTML, CSS, JSON, MySQL, MongoDB, and APIs. </span> </p>
+          </div>
+          
+        
        </section>
        
        {/* <section>
@@ -119,15 +140,25 @@ function HomePage() {
           </div>
        </section> */}
 
-       <section>
+       <section className="projects">
          <div>
-           <h3 className="text-5xl py-10 dark:text-white">Portfolio</h3>
+           <h3 className="text-5xl py-10 dark:text-white">Portfolio Projects</h3>
            {/* <p className="text-lg font-medium py-2 leading-8 text-gray-800 dark:text-white">Here is my portfolio..........</p> */}
          </div>
 
+         <div className="grid grid-cols-1 md: grid-cols-3 gap-8">
+           {projects.map((project, index) => (
+             <div key={index} className="flex flex-col justify-between rounded-lg overflow-hidden bg-white shadow-lg">
+             <Image src={project.image} alt={project.title} layout="responsive" width={400} height={300} />
+             <div className="p-4">
+               <h3 className="text-xl font-medium">{project.title}</h3>
+               <a href={project.url} className="mt-2 text-blue-500">View Project</a>
+             </div>
+           </div>
+           ))}
 
-         <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-         <div className="basis-1/4 flex-1">
+
+         {/* <div className="basis-1/4 flex-1">
            <a href="https://brahmg1.github.io/codebreakers/" target="_blank">
            <Image src={web7} className="rounded-lg object-cover" width={'100%'} height={'100%'} layout="responsive" />
                     </a>
@@ -167,11 +198,13 @@ function HomePage() {
            <Image src={web5} className="rounded-lg object-cover" width={'100%'} height={'100%'} layout="responsive" />
                     </a>
                     <h3  className="text-lg font-medium pt-8 pb-2 dark:text-white">Password Generator</h3>
-           </div>
+           </div> */}
 
          </div>
 
        </section>
+
+       
 
       </main>
 
