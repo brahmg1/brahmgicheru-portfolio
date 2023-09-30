@@ -39,10 +39,10 @@ function HomePage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900">
+      <main className="bg-white px-4 md:px-10 lg:px-20 dark:bg-gray-900">
 
        <section className="min-h-screen">
-         <nav className="py-10 mb-12 flex justify-between">
+         <nav className="py-4 md:py-10 mb-4 md:mb-12 flex justify-between">
         <h1  className="text-xl font-burtons dark:text-white">
           Brahm Gicheru
           </h1>
@@ -77,12 +77,12 @@ function HomePage() {
             <a href="#portfolio" className="px-4 dark:text-white hover:text-orange-400">Portfolio</a>
           </li> */}
           <li>
-            <a className="bg-gradient-to-r from-red-400 to-orange-400 text-black px-4 py-2 rounded-md ml-8 animate-pulse dark:text-white" href="https://drive.google.com/file/d/18HPh9s5Yf5A5bcCHFFk9TsoBZNRKoGHH/view?usp=sharing">Resume</a>
+            <a className="bg-gradient-to-r from-red-400 to-orange-400 text-black px-4 py-2 rounded-md ml-2 md:ml-8 animate-pulse dark:text-white" href="https://drive.google.com/file/d/18HPh9s5Yf5A5bcCHFFk9TsoBZNRKoGHH/view?usp=sharing">Resume</a>
           </li>
         </ul>
           </nav>
 
-          <div className="text-center p-10">
+          <div className="text-center p-4 md:p-10">
             <h2 className="text-5xl py-2 text-orange-400 font-medium md:text-6xl" >
             <Typewriter
             onInit={(typewriter) => {
@@ -146,7 +146,7 @@ function HomePage() {
            {/* <p className="text-lg font-medium py-2 leading-8 text-gray-800 dark:text-white">Here is my portfolio..........</p> */}
          </div>
 
-         <div className="grid grid-cols-1 md: grid-cols-3 gap-8">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
            {projects.map((project, index) => (
              <div key={index} className="flex flex-col justify-between rounded-lg overflow-hidden bg-white shadow-lg">
              <Image src={project.image} alt={project.title} layout="responsive" width={400} height={300} />
