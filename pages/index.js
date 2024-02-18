@@ -5,7 +5,7 @@ import {
   AiFillGithub,
 } from "react-icons/ai";
 import Image from 'next/image';
-import linkedin from "../public/linkedin.jpeg";
+import headshot from "../public/Brahm Gicheru Headshot 2.jpeg";
 import design from '../public/design.png';
 import code from '../public/code.png';
 import consulting from '../public/consulting.png';
@@ -101,12 +101,12 @@ function HomePage() {
           />
 
             <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
-            <Image src={linkedin} layout="fill" objectFit="cover"/>
+            <Image src={headshot} layout="fill" objectFit="cover"/>
           </div>
 
             </h3>
             <p className="text-md text-justify py-5 leading-8 text-gray-800 md:text-xl max-w-4xl mx-auto dark:text-white first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:float-left">
-            Hello, my name is Brahm and I am an experienced Government contractor trusted on multi-million dollar contracts in project management. Enthusiastic life-long learner with a passion for bringing software engineering ideas to life and learning new technologies. Highly effective in self management while working on solo projects and collaborating on team projects. <span className="text-orange-400 font-semibold"> Technical Skills: JavaScript, React, Node, Express, HTML, CSS, JSON, MySQL, MongoDB, and APIs. </span> </p>
+            Hello, my name is Brahm and I am an experienced coding bootcamp graduate with an extensive background in various programming languages developing applications and websites from square one.  Specialize in JavaScript.  Professional strengths include creative problem-solving, time management, and written and verbal communication.  Detail-oriented mindset from 10+ years of project management experience in Government contracting. <span className="text-orange-400 font-semibold"> Technical Skills: JavaScript, React.js, Node.js, Express.js, HTML, CSS, JSON, MySQL, MongoDB, and APIs. </span> </p>
           </div>
           
         
