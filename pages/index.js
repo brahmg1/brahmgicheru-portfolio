@@ -32,19 +32,47 @@ function HomePage() {
     { image: web8, title: "To Do List Application", description: "Description of To Do List Application", url: "https://to-do-list-brahmg1.vercel.app" },
     { image: web7, title: "CityGirl Brewery Locator", description: "Description of CityGirl Brewery Locator Application", url: "https://brahmg1.github.io/codebreakers/" },  
   ];
-
+  
   const CustomPrevArrow = ({ onClick }) => (
-    <button className="slick-arrow slick-prev" onClick={onClick}>
+    <button
+      className="slick-arrow slick-prev"
+      onClick={onClick}
+      style={{
+        width: '50px',
+        height: '50px',
+        color: 'black',
+        zIndex: 1, // Ensure the arrow is above other elements
+        position: 'absolute', // Position the arrow absolutely
+        top: '50%', // Position the arrow vertically centered
+        left: 0, // Position the arrow to the left
+        transform: 'translateY(-50%)', // Center the arrow vertically
+      }}
+    >
       {'<'}
     </button>
   );
   
+  // Custom next arrow component
   const CustomNextArrow = ({ onClick }) => (
-    <button className="slick-arrow slick-next" onClick={onClick}>
+    <button
+      className="slick-arrow slick-next"
+      onClick={onClick}
+      style={{
+        width: '50px',
+        height: '50px',
+        color: 'black',
+        zIndex: 1, // Ensure the arrow is above other elements
+        position: 'absolute', // Position the arrow absolutely
+        top: '50%', // Position the arrow vertically centered
+        right: 0, // Position the arrow to the right
+        transform: 'translateY(-50%)', // Center the arrow vertically
+      }}
+    >
       {'>'}
     </button>
-  );  
-
+  );
+  
+  
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -52,11 +80,20 @@ function HomePage() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 2500,
     pauseOnHover: true,
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
+    customPaging: function (i) {
+      return (
+        <button className={styles["slick-dot"]}>
+          {i + 1}
+        </button>
+      );
+    },
   };
+  
+  
 
   // State to toggle the visibility of the project description
   const [showDescription, setShowDescription] = useState(false);
@@ -199,10 +236,13 @@ function HomePage() {
                   rel="noopener noreferrer"
                   className="relative"
                 >
-                <div className="project-image" style={{ 
+                <div 
+                className="project-image" 
+                style={{ 
                   position: "relative",
                   textAlign: "center",
                   overflow: "hidden",
+                  height: "325px",
                   }}>
 
                 <Image 
@@ -213,7 +253,7 @@ function HomePage() {
                 style={{
                   width: "50%",
                   height: "auto",
-                  display: "block",
+                  objectFit: "cover",
                   margin: "0 auto",
                 }} 
                  />
