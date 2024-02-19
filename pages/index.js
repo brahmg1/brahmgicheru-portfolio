@@ -16,21 +16,21 @@ import web4 from "../public/workday-scheduler.png";
 import web5 from "../public/password-generator.png";
 import web7 from "../public/web7.png";
 import web8 from "../public/To-Do-List-Application.png";
-import { useState } from "react";
+import React, { useState } from 'react';
 import Typewriter from "typewriter-effect";
-import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import styles from '../styles/Home.module.css';
 
 function HomePage() {
   const [darkMode, setDarkMode] = useState(false);
 
   const projects = [
-    { image: web1, title: "Weather Dashboard", url: "https://brahmg1.github.io/weather-dashboard/Develop/index.html" },
-    { image: web2, title: "Budget Tracker", url: "https://budget-tracker-roan.vercel.app" },
-    { image: web8, title: "To Do List Application", url: "https://to-do-list-brahmg1.vercel.app" },
-    { image: web7, title: "CityGirl Brewery Locator", url: "https://brahmg1.github.io/codebreakers/" },  
+    { image: web1, title: "Weather Dashboard", description: "Description of Weather Dashboard", url: "https://brahmg1.github.io/weather-dashboard/Develop/index.html" },
+    { image: web2, title: "Budget Tracker", description: "Description of Budget Tracker", url: "https://budget-tracker-roan.vercel.app" },
+    { image: web8, title: "To Do List Application", description: "Description of To Do List Application", url: "https://to-do-list-brahmg1.vercel.app" },
+    { image: web7, title: "CityGirl Brewery Locator", description: "Description of CityGirl Brewery Locator Application", url: "https://brahmg1.github.io/codebreakers/" },  
   ];
 
   const CustomPrevArrow = ({ onClick }) => (
@@ -48,15 +48,18 @@ function HomePage() {
   const sliderSettings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 5000,
     pauseOnHover: true,
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
   };
+
+  // State to toggle the visibility of the project description
+  const [showDescription, setShowDescription] = useState(false);
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -170,15 +173,60 @@ function HomePage() {
        </section> */}
 
        <section className="projects py-10">
+         
          <div className="container mx-auto">
            <h3 className="text-5xl pb-5 dark:text-white">Portfolio Projects</h3>
            {/* <p className="text-lg font-medium py-2 leading-8 text-gray-800 dark:text-white">Here is my portfolio..........</p> */}
+           
            <div className="carousel">
            <Slider {...sliderSettings}>
             {projects.map((project, index) => (
-              <div key={index}>
-                <Image src={project.image} alt={project.title} width={400} height={250} />
-                <h3>{project.title}</h3>
+              
+              <div key={index} className="relative" onMouseEnter={() => setShowDescription(true)} onMouseLeave={() => setShowDescription(false)}>
+                
+                <div className="project-image" style={{ 
+                  position: "relative",
+                  textAlign: "center",
+                  overflow: "hidden",
+                  }}>
+
+                <Image 
+                src={project.image}
+                alt={project.title}
+                width={400}
+                height={250}
+                style={{
+                  width: "50%",
+                  height: "auto",
+                  display: "block",
+                  margin: "0 auto",
+                }} 
+                 />
+
+              {/* Conditional rendering to show/hide the project description */}
+              {showDescription && (
+                <div className="project-overlay"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                  color: "white",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  opacity: 1, // Set opacity to 1 when hovering
+                  transition: "opacity 0.3s ease"
+                }}>
+                <h3 className="project-title">{project.title}</h3>
+                <p className={styles["project-description"]}>{project.description}</p>
+                </div>
+              )}
+                </div>
+
                 <a href={project.url}>View Project</a>
               </div>
             ))}
