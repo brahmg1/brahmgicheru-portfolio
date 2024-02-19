@@ -18,6 +18,10 @@ import web7 from "../public/web7.png";
 import web8 from "../public/To-Do-List-Application.png";
 import { useState } from "react";
 import Typewriter from "typewriter-effect";
+import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 function HomePage() {
   const [darkMode, setDarkMode] = useState(false);
@@ -28,6 +32,31 @@ function HomePage() {
     { image: web8, title: "To Do List Application", url: "https://to-do-list-brahmg1.vercel.app" },
     { image: web7, title: "CityGirl Brewery Locator", url: "https://brahmg1.github.io/codebreakers/" },  
   ];
+
+  const CustomPrevArrow = ({ onClick }) => (
+    <button className="slick-arrow slick-prev" onClick={onClick}>
+      {'<'}
+    </button>
+  );
+  
+  const CustomNextArrow = ({ onClick }) => (
+    <button className="slick-arrow slick-next" onClick={onClick}>
+      {'>'}
+    </button>
+  );  
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
+  };
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -140,22 +169,23 @@ function HomePage() {
           </div>
        </section> */}
 
-       <section className="projects">
-         <div>
-           <h3 className="text-5xl py-10 dark:text-white">Portfolio Projects</h3>
+       <section className="projects py-10">
+         <div className="container mx-auto">
+           <h3 className="text-5xl pb-5 dark:text-white">Portfolio Projects</h3>
            {/* <p className="text-lg font-medium py-2 leading-8 text-gray-800 dark:text-white">Here is my portfolio..........</p> */}
+           <div className="carousel">
+           <Slider {...sliderSettings}>
+            {projects.map((project, index) => (
+              <div key={index}>
+                <Image src={project.image} alt={project.title} width={400} height={250} />
+                <h3>{project.title}</h3>
+                <a href={project.url}>View Project</a>
+              </div>
+            ))}
+          </Slider>
          </div>
-
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-           {projects.map((project, index) => (
-             <div key={index} className="flex flex-col justify-between rounded-lg overflow-hidden bg-white shadow-lg">
-             <Image src={project.image} alt={project.title} layout="responsive" width={400} height={300} />
-             <div className="p-4">
-               <h3 className="text-xl font-medium">{project.title}</h3>
-               <a href={project.url} className="mt-2 text-blue-500">View Project</a>
-             </div>
-           </div>
-           ))}
+         </div>
+     
 
 
          {/* <div className="basis-1/4 flex-1">
@@ -200,7 +230,7 @@ function HomePage() {
                     <h3  className="text-lg font-medium pt-8 pb-2 dark:text-white">Password Generator</h3>
            </div> */}
 
-         </div>
+         
 
        </section>
 
