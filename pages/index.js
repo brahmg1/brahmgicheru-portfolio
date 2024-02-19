@@ -27,10 +27,10 @@ function HomePage() {
   const [darkMode, setDarkMode] = useState(false);
 
   const projects = [
-    { image: web1, title: "Weather Dashboard", description: "Description of Weather Dashboard", url: "https://brahmg1.github.io/weather-dashboard/Develop/index.html" },
-    { image: web2, title: "Budget Tracker", description: "Description of Budget Tracker", url: "https://budget-tracker-roan.vercel.app" },
-    { image: web8, title: "To Do List Application", description: "Description of To Do List Application", url: "https://to-do-list-brahmg1.vercel.app" },
-    { image: web7, title: "CityGirl Brewery Locator", description: "Description of CityGirl Brewery Locator Application", url: "https://brahmg1.github.io/codebreakers/" },  
+    { image: web1, title: "Weather Dashboard", description: "Created a dynamic weather dashboard using JavaScript and the OpenWeather API that displays current weather conditions and a five-day forecast for any city. Tools used are JavaScript, API, JSON, HTML, and CSS.", url: "https://brahmg1.github.io/weather-dashboard/Develop/index.html" },
+    { image: web2, title: "Budget Tracker", description: "Built a progressive web application (PWA) that allows users to track their expenses and incomes and view their financial history. Tools used are JavaScript, JSON, MongoDB, Express.JS, HTML, and CSS.", url: "https://budget-tracker-roan.vercel.app" },
+    { image: web8, title: "To Do List Application", description: "Programmed a to do list application that collects and organizes personal and work tasks for time management and efficiency. Tools used are JavaScript, HTML, JSON, and CSS.", url: "https://to-do-list-brahmg1.vercel.app" },
+    { image: web7, title: "CityGirl Brewery Locator", description: "Developed in a three person team, this responsive web application allows users to search for local breweries in US cities. Tools used are JavaScript, API, JSON, HTML, and CSS.", url: "https://brahmg1.github.io/codebreakers/" },  
   ];
   
   const CustomPrevArrow = ({ onClick }) => (
@@ -121,7 +121,7 @@ function HomePage() {
 
           <li className="flex items-center ml-4">
   <div className="text-5xl flex justify-center gap-4 py-3 dark:text-white">
-    <a href="https://www.linkedin.com/in/brahm-gicheru-5b75144b/" className="ml-2">
+    <a href="https://www.linkedin.com/in/brahm-gicheru-5b75144b/" target="_blank" className="ml-2">
       <AiFillLinkedin />
     </a>
   </div>
@@ -129,7 +129,7 @@ function HomePage() {
 
 <li className="flex items-center">
   <div className="text-5xl flex justify-center gap-4 py-3 dark:text-white">
-    <a href="https://github.com/brahmg1" className="ml-2">
+    <a href="https://github.com/brahmg1" target="_blank" className="ml-2">
       <AiFillGithub />
     </a>
   </div>
@@ -145,7 +145,7 @@ function HomePage() {
             <a href="#portfolio" className="px-4 dark:text-white hover:text-orange-400">Portfolio</a>
           </li> */}
           <li>
-            <a className="bg-gradient-to-r from-red-400 to-orange-400 text-black px-4 py-2 rounded-md ml-2 md:ml-8 animate-pulse dark:text-white" href="https://drive.google.com/file/d/18HPh9s5Yf5A5bcCHFFk9TsoBZNRKoGHH/view?usp=sharing">Resume</a>
+            <a className="bg-gradient-to-r from-red-400 to-orange-400 text-black px-4 py-2 rounded-md ml-2 md:ml-8 animate-pulse dark:text-white" href="https://drive.google.com/file/d/18HPh9s5Yf5A5bcCHFFk9TsoBZNRKoGHH/view?usp=sharing" target="_blank">Resume</a>
           </li>
         </ul>
           </nav>
@@ -211,7 +211,7 @@ function HomePage() {
        <section className="projects py-10">
          
          <div className="container mx-auto">
-           <h3 className="text-5xl pb-5 dark:text-white">Portfolio Projects</h3>
+           <h3 className="text-5xl pb-5 dark:text-white text-center">Portfolio Projects</h3>
            {/* <p className="text-lg font-medium py-2 leading-8 text-gray-800 dark:text-white">Here is my portfolio..........</p> */}
            
            <div className="carousel" style= {{
@@ -273,10 +273,25 @@ function HomePage() {
                   justifyContent: "center",
                   alignItems: "center",
                   opacity: 1, // Set opacity to 1 when hovering
-                  transition: "opacity 0.3s ease"
+                  transition: "opacity 0.3s ease",
+                  marginTop: "50px" // Add space between title and description when hovering
                 }}>
-                <h3 className="project-title">{project.title}</h3>
-                <p className={styles["project-description"]}>{project.description}</p>
+                <h3
+                className="project-title"
+                style={{
+                  fontFamily: "Arial, sans-serif",
+                  fontSize: "24px",
+                  fontWeight: "bold",
+              }}
+                >{project.title}
+                </h3>
+                <p 
+                className={styles["project-description"]}
+                style={{
+                  fontFamily: "Arial, sans-serif",
+                  fontSize: "20px",
+              }}
+                >{project.description}</p>
                 </div>
               )}
                 </div>
