@@ -87,7 +87,13 @@ function HomePage() {
     nextArrow: <CustomNextArrow />,
     customPaging: function (i) {
       return (
-        <button className={styles["slick-dot"]}>
+        <button
+        className={styles["slick-dot"]}
+        style={{
+          // Adjust background color to a lighter shade in dark mode
+          backgroundColor: darkMode ? "#ffffff80" : "transparent",
+        }}
+        >
           {i + 1}
         </button>
       );
