@@ -41,11 +41,12 @@ function HomePage() {
         width: '50px',
         height: '50px',
         color: 'black',
-        zIndex: 1, // Ensure the arrow is above other elements
-        position: 'absolute', // Position the arrow absolutely
-        top: '50%', // Position the arrow vertically centered
-        left: 0, // Position the arrow to the left
-        transform: 'translateY(-50%)', // Center the arrow vertically
+        zIndex: 2000, // Set a higher zIndex value
+        position: 'absolute',
+        top: '50%',
+        left: 0,
+        transform: 'translateY(-50%)',
+        opacity: 0.8, // Set opacity to ensure the arrow remains visible
       }}
     >
       {'<'}
@@ -61,17 +62,17 @@ function HomePage() {
         width: '50px',
         height: '50px',
         color: 'black',
-        zIndex: 1, // Ensure the arrow is above other elements
-        position: 'absolute', // Position the arrow absolutely
-        top: '50%', // Position the arrow vertically centered
-        right: 0, // Position the arrow to the right
-        transform: 'translateY(-50%)', // Center the arrow vertically
+        zIndex: 2000, // Set a higher zIndex value
+        position: 'absolute',
+        top: '50%',
+        right: 0,
+        transform: 'translateY(-50%)',
+        opacity: 0.8, // Set opacity to ensure the arrow remains visible
       }}
     >
       {'>'}
     </button>
   );
-  
   
   const sliderSettings = {
     dots: true,
@@ -92,8 +93,6 @@ function HomePage() {
       );
     },
   };
-  
-  
 
   // State to toggle the visibility of the project description
   const [showDescription, setShowDescription] = useState(false);
