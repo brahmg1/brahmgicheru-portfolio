@@ -178,12 +178,27 @@ function HomePage() {
            <h3 className="text-5xl pb-5 dark:text-white">Portfolio Projects</h3>
            {/* <p className="text-lg font-medium py-2 leading-8 text-gray-800 dark:text-white">Here is my portfolio..........</p> */}
            
-           <div className="carousel">
+           <div className="carousel" style= {{
+             maxWidth: "1250px",
+             margin: "0 auto",
+           }}>
            <Slider {...sliderSettings}>
             {projects.map((project, index) => (
               
-              <div key={index} className="relative" onMouseEnter={() => setShowDescription(true)} onMouseLeave={() => setShowDescription(false)}>
+              <div 
+              key={index}
+              className="relative"
+              onMouseEnter={() => setShowDescription(true)}
+              onMouseLeave={() => setShowDescription(false)
+              }>
                 
+                <a
+                  key={index}
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative"
+                >
                 <div className="project-image" style={{ 
                   position: "relative",
                   textAlign: "center",
@@ -227,7 +242,7 @@ function HomePage() {
               )}
                 </div>
 
-                <a href={project.url}>View Project</a>
+                </a>
               </div>
             ))}
           </Slider>
