@@ -24,7 +24,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import styles from '../styles/Home.module.css';
 
 function HomePage() {
-  const [darkMode, setDarkMode] = useState(false);
+  // const [darkMode, setDarkMode] = useState(false);
 
   const projects = [
     { image: web1, title: "Weather Dashboard", description: "Created a dynamic weather dashboard using JavaScript and the OpenWeather API that displays current weather conditions and a five-day forecast for any city. Tools used are JavaScript, API, JSON, HTML, and CSS.", url: "https://brahmg1.github.io/weather-dashboard/Develop/index.html" },
@@ -88,11 +88,12 @@ function HomePage() {
     customPaging: function (i) {
       return (
         <button
-        className={styles["slick-dot"]}
-        style={{
-          // Adjust background color to a lighter shade in dark mode
-          backgroundColor: darkMode ? "#ffffff80" : "transparent",
-        }}
+          className={styles["slick-dot"]}
+          style={{
+            // Adjust background color to a lighter shade in dark mode
+            backgroundColor: "#ffffff80", // Set the color directly
+            outline: "none", // Remove square outline
+          }}
         >
           {i + 1}
         </button>
@@ -104,7 +105,7 @@ function HomePage() {
   const [showDescription, setShowDescription] = useState(false);
 
   return (
-    <div className={darkMode ? "dark" : ""}>
+    <div className="dark">
 
       <Head>
         <title>Brahm Gicheru Portfolio</title>
@@ -121,9 +122,9 @@ function HomePage() {
           Brahm Gicheru
           </h1>
         <ul className="flex items-center">
-          <li className="px-10">
+          {/* <li className="px-10">
             <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className="cursor-pointer text-xl dark:fill-white"/>
-          </li>
+          </li> */}
 
           <li className="flex items-center ml-4">
   <div className="text-5xl flex justify-center gap-4 py-3 dark:text-white">
