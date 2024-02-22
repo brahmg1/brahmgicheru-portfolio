@@ -104,8 +104,25 @@ function HomePage() {
   // State to toggle the visibility of the project description
   const [showDescription, setShowDescription] = useState(false);
 
+  const bodyStyle = {
+    margin: 0,
+    padding: 0,
+  };
+  
+  const headerStyle = {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+    padding: '0px 10px',
+    zIndex: 1000,
+    backgroundColor: '#111827',
+    borderBottom: '1px solid white',
+  };
+
+
   return (
-    <div className="dark">
+    <div className="dark" style={bodyStyle}>
 
       <Head>
         <title>Brahm Gicheru Portfolio</title>
@@ -117,8 +134,8 @@ function HomePage() {
       <main className="bg-white px-4 md:px-10 lg:px-20 dark:bg-gray-900">
 
        <section className="min-h-screen">
-         <nav className="py-4 md:py-10 mb-4 md:mb-12 flex justify-between">
-        <h1  className="text-xl font-burtons dark:text-white">
+         <nav className="py-4 md:py-10 mb-4 md:mb-12 flex justify-between" style={headerStyle}> {/* Fix header at the top*/}
+        <h1  className="text-xl font-burtons dark:text-white" style={{ padding: '20px' }}>
           Brahm Gicheru
           </h1>
         <ul className="flex items-center">
@@ -156,9 +173,10 @@ function HomePage() {
           </li>
         </ul>
           </nav>
+          
 
           <div className="text-center p-4 md:p-10">
-            <h2 className="text-5xl py-2 text-orange-400 font-medium md:text-6xl" >
+            <h2 className="text-5xl py-2 text-orange-400 font-medium md:text-6xl" style={{ padding: '70px' }}>
             <Typewriter
             onInit={(typewriter) => {
               typewriter.typeString("Brahm Gicheru").start();
