@@ -120,6 +120,11 @@ function HomePage() {
     borderBottom: '1px solid white',
   };
 
+  const horizontalLine = {
+    borderTop: '1px solid white',
+    width: '100%',
+    padding: '50px',
+  }
 
   return (
     <div className="dark" style={bodyStyle}>
@@ -176,7 +181,7 @@ function HomePage() {
           
 
           <div className="text-center p-4 md:p-10">
-            <h2 className="text-5xl py-2 text-orange-400 font-medium md:text-6xl" style={{ padding: '70px' }}>
+            <h2 className="text-5xl py-2 text-orange-400 font-medium md:text-6xl" style={{ padding: '90px' }}>
             <Typewriter
             onInit={(typewriter) => {
               typewriter.typeString("Brahm Gicheru").start();
@@ -235,6 +240,8 @@ function HomePage() {
 
        <section className="projects py-10">
          
+       <div style={horizontalLine} ></div>
+
          <div className="container mx-auto">
            <h3 className="text-5xl pb-5 dark:text-white text-center">Portfolio Projects</h3>
            {/* <p className="text-lg font-medium py-2 leading-8 text-gray-800 dark:text-white">Here is my portfolio..........</p> */}
