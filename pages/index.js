@@ -140,7 +140,7 @@ function HomePage() {
 
        <section className="min-h-screen">
          <nav className="py-4 md:py-10 mb-4 md:mb-12 flex justify-between" style={headerStyle}> {/* Fix header at the top*/}
-        <h1  className="text-xl font-burtons dark:text-white" style={{ padding: '20px' }}>
+        <h1  className="text-xl font-burtons dark:text-white" style={{ marginTop: '20px' }}>
           Brahm Gicheru
           </h1>
         <ul className="flex items-center">
@@ -181,7 +181,7 @@ function HomePage() {
           
 
           <div className="text-center p-4 md:p-10">
-            <h2 className="text-5xl py-2 text-orange-400 font-medium md:text-6xl" style={{ padding: '90px' }}>
+            <h2 className="text-5xl py-2 text-orange-400 font-medium md:text-6xl" style={{ marginTop: '90px' }}>
             <Typewriter
             onInit={(typewriter) => {
               typewriter.typeString("Brahm Gicheru").start();
@@ -243,7 +243,7 @@ function HomePage() {
        <div style={horizontalLine} ></div>
 
          <div className="container mx-auto">
-           <h3 className="text-5xl pb-5 dark:text-white text-center">Portfolio Projects</h3>
+           <h3 className="text-5xl pb-5 dark:text-white text-center" style={{ marginBottom: '50px' }}>Portfolio Projects</h3>
            {/* <p className="text-lg font-medium py-2 leading-8 text-gray-800 dark:text-white">Here is my portfolio..........</p> */}
            
            <div className="carousel" style= {{
