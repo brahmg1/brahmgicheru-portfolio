@@ -22,6 +22,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from '../styles/Home.module.css';
+import { Analytics } from "@vercel/analytics/react"
 
 function HomePage() {
   // const [darkMode, setDarkMode] = useState(false);
@@ -128,6 +129,8 @@ function HomePage() {
 
   return (
     <div className="dark" style={bodyStyle}>
+
+    <Analytics />
 
       <Head>
         <title>Brahm Gicheru Portfolio</title>
