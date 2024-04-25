@@ -207,7 +207,7 @@ function HomePage() {
 
             </h3>
             <p className="text-md text-justify py-5 leading-8 text-gray-800 md:text-xl max-w-4xl mx-auto dark:text-white first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:float-left">
-            Hello, my name is Brahm and I am an experienced coding bootcamp graduate with an extensive background in various programming languages developing applications and websites from square one.  Specialize in JavaScript.  Professional strengths include creative problem-solving, time management, and written and verbal communication.  Detail-oriented mindset from 10+ years of project management experience in Government contracting. <span className="text-orange-400 font-semibold"> Technical Skills: JavaScript, React.js, Node.js, Express.js, HTML, CSS, JSON, MySQL, MongoDB, and APIs. </span> </p>
+            Hello, my name is Brahm and I am an experienced coding bootcamp graduate with an extensive background in various programming languages developing applications and websites from square one.  Professional strengths include creative problem-solving, time management, and written and verbal communication.  Detail-oriented mindset from 10+ years of project management experience in Government contracting. <span className="text-orange-400 font-semibold"> Technical Skills: JavaScript, Python, SQL, React, Next.js, Tailwind CSS, Express.js, Node.js, JSON, MySQL, MongoDB, APIs, HTML, and CSS. </span> </p>
           </div>
           
         
